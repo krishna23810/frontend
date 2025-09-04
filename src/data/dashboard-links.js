@@ -1,0 +1,46 @@
+import { ACCOUNT_TYPE } from "../data/contants";
+
+
+export const sidebarLinks = [
+    {
+        id: 1,
+        name: "My Profile",
+        path: "/dashboard/my-profile",
+        icon: "VscAccount",
+    },
+    {
+        id: 2,
+        name: "Dashboard",
+        path: "/dashboard/instructor",
+        icon: "VscDashboard",
+        type: ACCOUNT_TYPE.INSTRUCTOR,
+    },
+    {
+        id: 3,
+        name: "My Courses",
+        path: "/dashboard/my-courses",
+        icon: "VscBook",
+        type: ACCOUNT_TYPE.INSTRUCTOR,
+    },
+    {
+        id: 4,
+        name: "Add Course",
+        path: "/dashboard/add-course",
+        type: ACCOUNT_TYPE.INSTRUCTOR,
+        icon: "VscAdd",
+    },
+    {
+        id: 5,
+        name: "Enrolled Courses",
+        path: "/dashboard/enrolled-courses",
+        type: ACCOUNT_TYPE.STUDENT,
+        icon: "VscMortarBoard",
+    },
+    {
+        id: 6,
+        name: "Purchase History",
+        path: "/dashboard/purchase-history",
+        type: ACCOUNT_TYPE.STUDENT,
+        icon: "VscHistory",
+    },
+];

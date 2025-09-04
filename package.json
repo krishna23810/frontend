@@ -1,0 +1,89 @@
+{
+  "name": "react-tailwind-css-starter-pack",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@clerk/clerk-react": "^5.39.0",
+    "@coreui/react-pro": "^5.20.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1",
+    "@mux/mux-player-react": "^3.5.3",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-toast": "^1.2.15",
+    "@ramonak/react-progress-bar": "^5.4.0",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@vidstack/react": "^1.12.13",
+    "concurrently": "^9.2.0",
+    "copy-to-clipboard": "^3.3.3",
+    "crypto-js": "^4.2.0",
+    "express-fileupload": "^1.5.2",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.539.0",
+    "media-icons": "^1.1.5",
+    "react": "^18.3.1",
+    "react-axios": "^2.0.6",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.62.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "react-otp-input": "^3.1.1",
+    "react-player": "^3.3.1",
+    "react-rating-star-with-type": "^1.2.2",
+    "react-reduce": "^0.2.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.7.1",
+    "react-scripts": "5.0.1",
+    "react-simple-star-rating": "^5.1.7",
+    "react-slick": "^0.31.0",
+    "react-star-ratings": "^2.3.0",
+    "react-type-animation": "^3.2.0",
+    "recharts": "^3.1.2",
+    "redux": "^5.0.1",
+    "redux-toolkit": "^1.1.2",
+    "swiper": "^11.2.10",
+    "video-react": "^0.16.0",
+    "web-vitals": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git"
+  },
+  "author": "Pranay Gupta",
+  "bugs": {
+    "url": "https://github.com/thepranaygupta/react-tailwind-css-starter-pack/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "server": "cd server && npm run dev",
+    "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgGreen\" \"npm start \" \"npm run server\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
