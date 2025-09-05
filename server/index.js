@@ -5,6 +5,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 const dotenv = require('dotenv');
+const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -32,12 +33,25 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
+// Add this after the existing middleware
+app.use(express.static(path.join(__dirname, '../build')));
+
+// Add this as the last route (catch-all for React Router)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
 
 // CORS configuration
+// app.use(cors({
+//     origin:'http://localhost:3000', // Adjust this to your frontend URL
+//     credentials: true,
+// }));
 app.use(cors({
-    origin:'http://localhost:3000', // Adjust this to your frontend URL
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
     credentials: true,
 }));
+
 
 // File upload middleware
 app.use(fileUpload({

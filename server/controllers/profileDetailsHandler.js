@@ -4,8 +4,6 @@ const Courses = require('../models/cousrse');
 const coursesProgress = require('../models/coursesProgress');
 const RatingAndReview = require('../models/RatingAndReview');
 const { uploadImage } = require('../utils/imageUploder');
-const { Await } = require('react-router-dom');
-
 
 exports.updateProfileDetails = async (req, res) => {
     try {
