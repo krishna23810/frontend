@@ -18,7 +18,9 @@ export async function getUserEnrolledCourses(token, setEnrolledCourses) {
     try {
         const response = await apiConnector("GET", GET_USER_ENROLLED_COURSES_API,
             null,
-            { Authorization: `Bearer ${token}` }
+            {
+                Authorization: `Bearer ${token}`
+            }
         );
         console.log("after Fetching enrolled courses ");
 
