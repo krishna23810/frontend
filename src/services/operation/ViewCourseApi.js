@@ -9,7 +9,7 @@ export async function getViewCourse(courseId, token) {
     const toastId = toast.loading('Loading course details...');
 
     try {
-        const response = await apiConnector("GET", GET_COURSE_DETAILS_API.replace(':courseId', courseId), {
+        const response = await apiConnector("GET",GET_COURSE_DETAILS_API(courseId), {
             Authorization: `Bearer ${token}`
         });
 
