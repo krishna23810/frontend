@@ -14,6 +14,7 @@ const EnrolledCourses = () => {
     const UserEnrolledCourses = async () => {
         try {
             setLoading(true);
+            console.log("token ",token);
             const response = await getUserEnrolledCourses(token, setEnrolledCourses);
             setEnrolledCourses(response?.allprogressData || []);
         } catch (error) {
