@@ -81,7 +81,7 @@ const EnrolledCourses = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                                     <div className="absolute top-4 right-4">
                                         <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                            {course.progress}% Complete
+                                            {course.progress ? course.progress : 0}% Complete
                                         </span>
                                     </div>
                                 </div>
