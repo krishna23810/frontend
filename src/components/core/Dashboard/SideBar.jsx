@@ -5,11 +5,12 @@ import { useDispatch } from "react-redux";
 import { sidebarLinks } from "../../../data/dashboard-links";
 import { useSelector } from "react-redux";
 import SidebarLink from "./SideBarLinks";
-
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
+    
     const { user, loading: profileLoading } = useSelector((state) => state.profile);
     const { loading: authLoading } = useSelector((state) => state.auth);
 
@@ -17,7 +18,7 @@ const SideBar = () => {
 
 
     const handleLogout = () => {
-        dispatch(logout());
+        dispatch(logout(navigate));
     };
 
 
