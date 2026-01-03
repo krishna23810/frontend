@@ -11,6 +11,8 @@ import { IoCaretDownCircleOutline } from "react-icons/io5";
 import ProfileDropDown from './profileDropDown';
 import { useDispatch } from 'react-redux';
 import {setCategory} from '../../slice/profileSlice';
+import {logout} from "../../services/operation/AuthApi";
+import { useNavigate } from 'react-router-dom';
 // import ProfilePic from  '../../assets/profilePic/WIN_20250803_14_51_50_Pro.jpg'
 
 
@@ -21,7 +23,7 @@ const NavBar = () => {
     const { user } = useSelector((state) => state.profile);
     const profilePic = user?.additionalInfo?.profilePicture ;
     const account = "Instructor";
-
+    const navigate = useNavigate();
     // console.log("User data:", user);
     // console.log("Token:", token);
     // console.log("Profile ", account);
@@ -29,12 +31,18 @@ const NavBar = () => {
     // console.log("Profile Picture: ", profilePic);
 
     const [sublinks, setSublinks] = useState([]);
-   
+   const handleLogout = () => {
+        dispatch(logout(navigate)); 
+    }
     function loginDropDown (){
         return (
             <div className='absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-10'>
                 <Link to="/profile" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>Profile</Link>
-                <Link to="/logout" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>Logout</Link>
+                <button 
+                onClick={handleLogout}
+                    className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>
+                    Logout
+                </button>
             </div>
         );
     }
